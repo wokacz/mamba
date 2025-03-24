@@ -46,7 +46,7 @@ format:
 ## build: build the binary
 .PHONY: build
 build:
-	go build -o ./bin/mamba ./cmd/cli/...
+	go build -o ./bin/mamba ./cmd/mamba/...
 
 ## sha256: generate sha256 checksum
 .PHONY: sha256

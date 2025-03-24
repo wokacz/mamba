@@ -6,13 +6,7 @@ import (
 )
 
 func (f Files) getModelsContent() string {
-	return `"""
-This module contains the data models for the application.
-The data models are defined using Pydantic data classes.
-Each data model represents a specific type of data that the application will handle.
-"""
-
-from datetime import datetime
+	return `from datetime import datetime
 from uuid import UUID, uuid4
 
 from sqlmodel import SQLModel, Field

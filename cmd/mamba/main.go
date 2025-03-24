@@ -28,7 +28,7 @@ func init() {
 }
 
 func main() {
-	app.cobra.AddCommand(app.initCommand())
+	app.cobra.AddCommand(app.newCommand())
 	app.cobra.AddCommand(app.doctorCommand())
 
 	err := app.cobra.Execute()
