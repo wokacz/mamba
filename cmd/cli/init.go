@@ -34,9 +34,29 @@ func (app *application) initCommand() *cobra.Command {
 				return
 			}
 
+			err = os.Mkdir(fmt.Sprintf("%s/app", projectName), 0755)
+			if err != nil {
+				fmt.Println(err)
+				return
+			}
+
+			err = os.Mkdir(fmt.Sprintf("%s/app/routes", projectName), 0755)
+			if err != nil {
+				fmt.Println(err)
+				return
+			}
+
+			err = os.Mkdir(fmt.Sprintf("%s/app/internal", projectName), 0755)
+			if err != nil {
+				fmt.Println(err)
+				return
+			}
+
+			err = f.CreateReadme(projectName)
 			err = f.CreateMakefile(projectName)
 			err = f.CreateConfigFile(projectName)
 			err = f.CreatePyproject(projectName)
+			err = f.CreateModels(projectName)
 
 			if err != nil {
 				return

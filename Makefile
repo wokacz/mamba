@@ -38,3 +38,26 @@ test/cover:
 .PHONY: format
 format:
 	go fmt ./...
+
+# ==================================================================================== #
+# DEVELOPMENT
+# ==================================================================================== #
+
+## build: build the binary
+.PHONY: build
+build:
+	go build -o ./bin/mamba ./cmd/cli/...
+
+## sha256: generate sha256 checksum
+.PHONY: sha256
+sha256:
+	@shasum -a 256 ./bin/mamba.tar.gz
+
+## tar: create a tarball
+.PHONY: tar
+tar:
+	@tar -czvf ./bin/mamba.tar.gz ./bin/mamba
+
+## prepare: prepare the binary
+.PHONY: prepare
+prepare: build tar sha256

@@ -20,6 +20,14 @@ To install MambaPy, simply run:
 go install github.com/wokacz/mamba/cmd/mamba@latest
 ```
 
+```shell
+brew tap wokacz/tap
+```
+
+```shell
+brew install mamba
+```
+
 ## 🎯 Usage
 
 After installation, you can use MambaPy by running:
