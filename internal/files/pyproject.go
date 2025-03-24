@@ -21,7 +21,7 @@ build-backend = "poetry.core.masonry.api"
 `, projectName)
 }
 
-func (f *Files) CreatePyproject(projectName string) error {
+func (f Files) CreatePyproject(projectName string) error {
 	file, err := os.Create(fmt.Sprintf("%s/pyproject.toml", projectName))
 	if err != nil {
 		fmt.Println(err)

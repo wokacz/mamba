@@ -6,7 +6,7 @@ import (
 )
 
 // getMakefileContent
-func (f *Files) getMakefileContent() string {
+func (f Files) getMakefileContent() string {
 	return `# ==================================================================================== #
 # HELPERS
 # ==================================================================================== #
@@ -30,7 +30,7 @@ dev:
 }
 
 // CreateMakefile creates a Makefile in the current directory
-func (f *Files) CreateMakefile(projectName string) error {
+func (f Files) CreateMakefile(projectName string) error {
 	file, err := os.Create(fmt.Sprintf("%s/Makefile", projectName))
 	if err != nil {
 		fmt.Println(err)
@@ -44,7 +44,7 @@ func (f *Files) CreateMakefile(projectName string) error {
 		}
 	}(file)
 
-	content := f.GetMakefileContent()
+	content := f.getMakefileContent()
 
 	_, err = file.WriteString(content)
 	if err != nil {

@@ -36,6 +36,7 @@ func (app *application) initCommand() *cobra.Command {
 
 			err = f.CreateMakefile(projectName)
 			err = f.CreateConfigFile(projectName)
+			err = f.CreatePyproject(projectName)
 
 			if err != nil {
 				return

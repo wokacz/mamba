@@ -1,6 +1,6 @@
 package files
 
-func (f *Files) Main() string {
+func (f Files) Main() string {
 	return `'''
 Main module for the FastAPI application.
 This module creates an instance of the FastAPI class and includes the routers defined in the routers module.

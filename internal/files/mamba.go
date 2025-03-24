@@ -6,7 +6,7 @@ import (
 	"os"
 )
 
-func (f *Files) getConfigFileContent(projectName string) string {
+func (f Files) getConfigFileContent(projectName string) string {
 	tomlProjectName := words.ToKebabCase(projectName)
 	return fmt.Sprintf(`# mambaPy configuration file
 # https://www.github.com/wokacz/mamba
@@ -25,7 +25,7 @@ resources = [
 `, tomlProjectName)
 }
 
-func (f *Files) CreateConfigFile(projectName string) error {
+func (f Files) CreateConfigFile(projectName string) error {
 	file, err := os.Create(fmt.Sprintf("%s/mamba.toml", projectName))
 	if err != nil {
 		fmt.Println(err)
